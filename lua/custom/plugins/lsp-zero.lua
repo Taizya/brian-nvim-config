@@ -127,7 +127,7 @@ return {
       }
 
       vim.api.nvim_create_autocmd('LspAttach', {
-        group = vim.api.nvim_create_augroup('user_lsp_attach', { clear = true }),
+        group = vim.api.nvim_create_augroup('user_lsp_attach', { clear = false }),
         callback = function(event)
           local opts = { buffer = event.buf }
 
@@ -140,7 +140,6 @@ return {
           vim.keymap.set('n', 'gr', '<cmd>vim.lsp.buf.references()<cr>', { desc = '' })
           vim.keymap.set('n', 'gs', '<cmd>vim.lsp.buf.signature.help()<cr>', { desc = '' })
           vim.keymap.set('n', '<leader>rn', '<cmd>vim.lsp.buf.rename()<cr>', { desc = '' })
-          vim.keymap.set('n', '<leader>fm', '<cmd>vim.lsp.buf.format()<cr>', { desc = '' })
           vim.keymap.set('n', '<leader>ca', '<cmd>vim.lsp.buf.code_action()<cr>', { desc = '' })
           vim.keymap.set('n', 'gl', '<cmd>vim.diagnostic.open_float()<cr>', { desc = '' })
           vim.keymap.set('n', '<leader>dn', '<cmd>vim.diagnostic.goto_next()<cr>', { desc = '' })
