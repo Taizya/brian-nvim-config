@@ -7,8 +7,8 @@ return {
     bufferline.setup {
       options = {
         mode = 'buffers',
-        separator_style = 'slant',
-        diagnostics = 'coc',
+        separator_style = 'thick',
+        diagnostics = 'nvim_lsp',
         indicator = {
           style = 'underline',
         },

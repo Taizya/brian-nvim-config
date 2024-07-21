@@ -57,7 +57,6 @@ Kickstart Guide:
   of the kickstart init.lua.
 
   Next, run AND READ `:help`.
-    This will open up a help window with some basic information
     about reading, navigating and searching the builtin help documentation.
 
     This should be the first place you go to look when you're stuck or confused
@@ -83,6 +82,7 @@ I hope you enjoy your Neovim journey,
 
 P.S. You can delete this when you're done too. It's your config now! :)
 --]]
+-- Set transparent background for various UI elements
 
 -- Set <space> as the leader key
 -- See `:help mapleader`
@@ -99,6 +99,8 @@ vim.g.have_nerd_font = true
 -- See `:help opt`
 -- NOTE: You can change these options as you wish!
 --  For more options, you can see `:help option-list`
+
+-- Set transparent background for preview window
 
 -- Make line numbers default
 opt.number = true
@@ -173,6 +175,14 @@ opt.backspace = 'indent,eol,start'
 opt.encoding = 'UTF-8'
 opt.iskeyword:append '-'
 opt.iskeyword:append '_'
+
+vim.api.nvim_create_autocmd('TextYankPost', {
+  desc = 'Highlight when yanking (copying) text',
+  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+})
 
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'

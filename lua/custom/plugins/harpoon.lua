@@ -29,28 +29,28 @@ return {
 
     return {
       {
-        '<a-1>',
+        '<leader>1',
         function()
           harpoon:list():select(1)
         end,
         desc = 'Harpoon buffer 1',
       },
       {
-        '<a-2>',
+        '<leader>2',
         function()
           harpoon:list():select(2)
         end,
         desc = 'Harpoon buffer 2',
       },
       {
-        '<a-3>',
+        '<leader>3',
         function()
           harpoon:list():select(3)
         end,
         desc = 'Harpoon buffer 3',
       },
       {
-        '<a-4>',
+        '<leader>4',
         function()
           harpoon:list():select(4)
         end,
@@ -59,14 +59,14 @@ return {
 
       -- Harpoon next and previous.
       {
-        '<C-n>',
+        '<leader>hp',
         function()
           harpoon:list():next()
         end,
         desc = 'Harpoon next buffer',
       },
       {
-        '<C-p>',
+        '<leader>hn',
         function()
           harpoon:list():prev()
         end,
@@ -82,14 +82,14 @@ return {
         desc = 'Harpoon Toggle Menu',
       },
       {
-        '<C-a>',
+        '<leader>ha',
         function()
           harpoon:list():add()
         end,
         desc = 'Harpoon add file',
       },
       {
-        '<C-o>',
+        '<leader>o',
         function()
           toggle_telescope(harpoon:list())
         end,
