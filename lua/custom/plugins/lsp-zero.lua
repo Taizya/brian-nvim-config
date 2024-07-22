@@ -189,7 +189,7 @@ return {
         },
         handlers = {
           function(server_name)
-            require('lspconfig').servers[server_name].setup {
+            require('lspconfig').server_name.setup {
               capabilities = lsp_capabilities,
             }
           end,
